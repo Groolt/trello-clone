@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button'
 import { AccessAlarm, ThreeDRotation, Home } from '@mui/icons-material'
 import { pink } from '@mui/material/colors'
+import Typography from '@mui/material/Typography'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div>
         Groolt
       </div>
+      <Typography variant="body2" color="text.secondary">Hello</Typography>
       <Button variant="text">Text</Button>
       <Button variant="contained">Contained</Button>
       <Button variant="outlined">Outlined</Button>
