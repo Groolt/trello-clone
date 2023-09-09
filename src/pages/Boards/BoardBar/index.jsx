@@ -19,9 +19,6 @@ const MENU_STYLE = {
   borderRadius: '4px',
   '.MuiChip-icon': {
     color: 'white'
-  },
-  '&:hover': {
-    bgcolor: 'primary.50'
   }
 }
 function BoardBar() {
