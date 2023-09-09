@@ -31,13 +31,13 @@ const theme = extendTheme({
           },
           '&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb': {
             borderRadius: 8,
-            backgroundColor: '#bdc3c7'
+            backgroundColor: '#dcdde1'
           },
           '&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus': {
             backgroundColor: '#00b894'
           },
           '&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active': {
-            backgroundColor: '#00b894'
+            backgroundColor: '#white'
           },
           '&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover': {
             backgroundColor: '#00b894'
@@ -51,7 +51,11 @@ const theme = extendTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none'
+          textTransform: 'none',
+          borderWidth: '0.5px',
+          '&:hover': {
+            borderWidth: '1px'
+          }
         }
       }
     },
@@ -70,6 +74,12 @@ const theme = extendTheme({
               }
             },
             '& fieldset': {
+              borderWidth: '0.5px !important'
+            },
+            '&:hover fieldset': {
+              borderWidth: '1px !important'
+            },
+            '&.Mui-focused fieldset': {
               borderWidth: '1px !important'
             }
           }
