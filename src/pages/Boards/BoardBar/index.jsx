@@ -88,7 +88,9 @@ function BoardBar() {
               fontSize: '16px',
               borderColor: 'white',
               borderWidth: '1px',
-              color: 'white'
+              color: 'white',
+              cursor: 'pointer',
+              '&:first-of-type': { bgcolor: '#a4b0be' }
             }
           }}
         >
