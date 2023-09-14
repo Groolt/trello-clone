@@ -5,7 +5,6 @@ import { ReactComponent as TrelloIcon } from '~/assets/trello.svg'
 import SvgIcon from '@mui/material/SvgIcon'
 import Typography from '@mui/material/Typography'
 import Workspaces from './Menus/Workspaces'
-import Recent from './Menus/Recent'
 import Starred from './Menus/Starred'
 import Templates from './Menus/Templates'
 import Button from '@mui/material/Button'
@@ -15,7 +14,7 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
 import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
-import Profile from './Menus/Profile'
+import { Profile, Recent } from './Menus'
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd'
 import SearchIcon from '@mui/icons-material/Search'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -25,35 +24,56 @@ import { useState } from 'react'
 function AppBar() {
   const [searchValue, setSearchValue] = useState('')
   return (
-    <Box px={2} sx={{
-      width: '100%',
-      height: (theme) => theme.trello.appBarHeight,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: 2,
-      overflowX: 'auto',
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0')
-    }}>
+    <Box
+      px={2}
+      sx={{
+        width: '100%',
+        height: (theme) => theme.trello.appBarHeight,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 2,
+        overflowX: 'auto',
+        bgcolor: (theme) =>
+          theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0'
+      }}
+    >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <AppsIcon sx={{ color: 'white' }}/>
+        <AppsIcon sx={{ color: 'white' }} />
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-          <SvgIcon component={TrelloIcon} inheritViewBox sx={{ color: 'white' }} fontSize='small'/>
-          <Typography variant='span' sx={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'white' }}>Trello</Typography>
+          <SvgIcon
+            component={TrelloIcon}
+            inheritViewBox
+            sx={{ color: 'white' }}
+            fontSize="small"
+          />
+          <Typography
+            variant="span"
+            sx={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'white' }}
+          >
+            Trello
+          </Typography>
         </Box>
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1 }}>
-          <Workspaces/>
-          <Recent/>
-          <Starred/>
-          <Templates/>
+        <Box
+          sx={{
+            display: { xs: 'none', md: 'flex' },
+            alignItems: 'center',
+            gap: 1
+          }}
+        >
+          <Workspaces />
+          <Recent />
+          <Starred />
+          <Templates />
           <Button
             variant="text"
-            startIcon={<LibraryAddIcon/>}
+            startIcon={<LibraryAddIcon />}
             sx={{
               color: 'white',
               paddingX: '18px'
             }}
-          >Create
+          >
+            Create
           </Button>
         </Box>
       </Box>
@@ -62,20 +82,21 @@ function AppBar() {
           id="outlined-search"
           label="Search..."
           type="text"
-          size='small'
+          size="small"
           value={searchValue}
           onChange={(event) => setSearchValue(event.target.value)}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon sx={{ color: 'white' }}/>
+                <SearchIcon sx={{ color: 'white' }} />
               </InputAdornment>
             ),
             endAdornment: searchValue && (
               <IconButton
                 aria-label="toggle password visibility"
                 onClick={() => setSearchValue('')}
-              ><ClearIcon fontSize='small' sx={{ color: 'white' }}/>
+              >
+                <ClearIcon fontSize="small" sx={{ color: 'white' }} />
               </IconButton>
             )
           }}
@@ -104,20 +125,20 @@ function AppBar() {
             }
           }}
         />
-        <ModeSelect/>
-        <Tooltip title='Notification'>
+        <ModeSelect />
+        <Tooltip title="Notification">
           <IconButton>
             <Badge color="warning" variant="dot" sx={{ cursor: 'pointer' }}>
-              <NotificationsNoneIcon sx={{ color: 'white' }}/>
+              <NotificationsNoneIcon sx={{ color: 'white' }} />
             </Badge>
           </IconButton>
         </Tooltip>
-        <Tooltip title='Help'>
+        <Tooltip title="Help">
           <IconButton sx={{ cursor: 'pointer' }}>
-            <HelpOutlineIcon sx={{ color: 'white' }}/>
+            <HelpOutlineIcon sx={{ color: 'white' }} />
           </IconButton>
         </Tooltip>
-        <Profile/>
+        <Profile />
       </Box>
     </Box>
   )
