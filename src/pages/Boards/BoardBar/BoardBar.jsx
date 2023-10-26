@@ -24,23 +24,29 @@ const MENU_STYLE = {
 }
 function BoardBar({ board }) {
   return (
-    <Box px={2} sx={{
-      width: '100%',
-      height: (theme) => theme.trello.boardBarHeight,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: 2,
-      overflowX: 'auto',
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2')
-    }}>
+    <Box
+      px={2}
+      sx={{
+        width: '100%',
+        height: (theme) => theme.trello.boardBarHeight,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 2,
+        overflowX: 'auto',
+        bgcolor: (theme) =>
+          theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'
+      }}
+    >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Chip
-          icon={<DashboardIcon />}
-          label={board?.title}
-          clickable
-          sx={MENU_STYLE}
-        />
+        <Tooltip title={board?.description}>
+          <Chip
+            icon={<DashboardIcon />}
+            label={board?.title}
+            clickable
+            sx={MENU_STYLE}
+          />
+        </Tooltip>
         <Chip
           icon={<VpnLockIcon />}
           label={capitalizeFirstLetter(board?.type)}
@@ -69,7 +75,7 @@ function BoardBar({ board }) {
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Button
           variant="outlined"
-          startIcon={<PersonAddIcon/>}
+          startIcon={<PersonAddIcon />}
           sx={{
             color: 'white',
             borderColor: 'white',
@@ -77,7 +83,9 @@ function BoardBar({ board }) {
               borderColor: 'white'
             }
           }}
-        >Invite</Button>
+        >
+          Invite
+        </Button>
         <AvatarGroup
           max={5}
           sx={{
@@ -94,55 +102,65 @@ function BoardBar({ board }) {
             }
           }}
         >
-          <Tooltip title='Binh Nguyen'>
+          <Tooltip title="Binh Nguyen">
             <Avatar
               alt="Groolt"
-              src='https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj' />
+              src="https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj"
+            />
           </Tooltip>
-          <Tooltip title='Binh Nguyen'>
+          <Tooltip title="Binh Nguyen">
             <Avatar
               alt="Groolt"
-              src='https://scontent.fsgn5-9.fna.fbcdn.net/v/t1.6435-9/84845337_109873550582050_8735628098952757248_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VkhB6LDjKmoAX86lNo7&_nc_ht=scontent.fsgn5-9.fna&oh=00_AfBf3ZlUzoXk4IbNk1ESfSjmmTtOd8E2npmyzhnAg7wIIg&oe=65237A37' />
+              src="https://scontent.fsgn5-9.fna.fbcdn.net/v/t1.6435-9/84845337_109873550582050_8735628098952757248_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VkhB6LDjKmoAX86lNo7&_nc_ht=scontent.fsgn5-9.fna&oh=00_AfBf3ZlUzoXk4IbNk1ESfSjmmTtOd8E2npmyzhnAg7wIIg&oe=65237A37"
+            />
           </Tooltip>
-          <Tooltip title='Binh Nguyen'>
+          <Tooltip title="Binh Nguyen">
             <Avatar
               alt="Groolt"
-              src='https://scontent.fsgn5-8.fna.fbcdn.net/v/t1.6435-9/138987747_705188586824689_2552344432136676803_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ayfgQBlJiIsAX_7cT3i&_nc_ht=scontent.fsgn5-8.fna&oh=00_AfCpLw-JX1RF0saj2jmw8yQ9Z4wA5xX6MmL8qlOjMW78hg&oe=652351B7' />
+              src="https://scontent.fsgn5-8.fna.fbcdn.net/v/t1.6435-9/138987747_705188586824689_2552344432136676803_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ayfgQBlJiIsAX_7cT3i&_nc_ht=scontent.fsgn5-8.fna&oh=00_AfCpLw-JX1RF0saj2jmw8yQ9Z4wA5xX6MmL8qlOjMW78hg&oe=652351B7"
+            />
           </Tooltip>
-          <Tooltip title='Binh Nguyen'>
+          <Tooltip title="Binh Nguyen">
             <Avatar
               alt="Groolt"
-              src='https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj' />
+              src="https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj"
+            />
           </Tooltip>
-          <Tooltip title='Binh Nguyen'>
+          <Tooltip title="Binh Nguyen">
             <Avatar
               alt="Groolt"
-              src='https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj' />
+              src="https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj"
+            />
           </Tooltip>
-          <Tooltip title='Binh Nguyen'>
+          <Tooltip title="Binh Nguyen">
             <Avatar
               alt="Groolt"
-              src='https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj' />
+              src="https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj"
+            />
           </Tooltip>
-          <Tooltip title='Binh Nguyen'>
+          <Tooltip title="Binh Nguyen">
             <Avatar
               alt="Groolt"
-              src='https://scontent.fsgn5-9.fna.fbcdn.net/v/t1.6435-9/84845337_109873550582050_8735628098952757248_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VkhB6LDjKmoAX86lNo7&_nc_ht=scontent.fsgn5-9.fna&oh=00_AfBf3ZlUzoXk4IbNk1ESfSjmmTtOd8E2npmyzhnAg7wIIg&oe=65237A37' />
+              src="https://scontent.fsgn5-9.fna.fbcdn.net/v/t1.6435-9/84845337_109873550582050_8735628098952757248_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VkhB6LDjKmoAX86lNo7&_nc_ht=scontent.fsgn5-9.fna&oh=00_AfBf3ZlUzoXk4IbNk1ESfSjmmTtOd8E2npmyzhnAg7wIIg&oe=65237A37"
+            />
           </Tooltip>
-          <Tooltip title='Binh Nguyen'>
+          <Tooltip title="Binh Nguyen">
             <Avatar
               alt="Groolt"
-              src='https://scontent.fsgn5-8.fna.fbcdn.net/v/t1.6435-9/138987747_705188586824689_2552344432136676803_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ayfgQBlJiIsAX_7cT3i&_nc_ht=scontent.fsgn5-8.fna&oh=00_AfCpLw-JX1RF0saj2jmw8yQ9Z4wA5xX6MmL8qlOjMW78hg&oe=652351B7' />
+              src="https://scontent.fsgn5-8.fna.fbcdn.net/v/t1.6435-9/138987747_705188586824689_2552344432136676803_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ayfgQBlJiIsAX_7cT3i&_nc_ht=scontent.fsgn5-8.fna&oh=00_AfCpLw-JX1RF0saj2jmw8yQ9Z4wA5xX6MmL8qlOjMW78hg&oe=652351B7"
+            />
           </Tooltip>
-          <Tooltip title='Binh Nguyen'>
+          <Tooltip title="Binh Nguyen">
             <Avatar
               alt="Groolt"
-              src='https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj' />
+              src="https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj"
+            />
           </Tooltip>
-          <Tooltip title='Binh Nguyen'>
+          <Tooltip title="Binh Nguyen">
             <Avatar
               alt="Groolt"
-              src='https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj' />
+              src="https://yt3.ggpht.com/sSUL7t4BdiSb3o50fdP8BdFWLMptnDbDvFMwjBF3hp8-eGeyCu5n4387IHABkO8ow81TCoxK=s108-c-k-c0x00ffffff-no-rj"
+            />
           </Tooltip>
         </AvatarGroup>
       </Box>
